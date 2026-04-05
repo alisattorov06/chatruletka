@@ -211,3 +211,7 @@ async def websocket_endpoint(websocket: WebSocket, user_id: int):
     except Exception:
         await manager.leave_room(user_id)
         manager.disconnect(user_id)
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
