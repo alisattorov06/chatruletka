@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat — Chatruletka</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="noise"></div>
+<div class="page-wrapper chat-layout">
+
+  <header class="chat-header">
+    <div class="topbar-left">
+      <a href="/dashboard" style="text-decoration:none">
+        <div class="brand-logo" style="margin:0">
+          <div class="brand-icon" style="width:30px;height:30px;border-radius:9px;font-size:15px">🎲</div>
+          <span class="brand-name" style="font-size:16px">Chatruletka</span>
+        </div>
+      </a>
+      <div class="chat-status">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-text">Ulanmoqda...</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="user-chip">
+        <div class="avatar">{{ user.username[0].upper() }}</div>
+        <span>{{ user.username }}</span>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="logout-btn" style="width:auto;padding:7px 12px;font-size:12px">Chiqish</button>
+    </div>
+  </header>
+
+  <div class="chat-body">
+    <div class="video-panel">
+      <div class="video-wrapper self">
+        <video id="local-video" autoplay muted playsinline></video>
+        <div class="video-label">Siz</div>
+        <div class="no-video" id="local-placeholder" style="display:none">
+          <div class="icon">📷</div>
+          <span>Kamera yo'q</span>
+        </div>
+      </div>
+      <div class="video-wrapper">
+        <video id="remote-video" autoplay playsinline></video>
+        <div class="video-label">Hamkor</div>
+        <div class="no-video" id="remote-placeholder">
+          <div class="icon">👤</div>
+          <span>Hamkor kutilmoqda...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-sidebar">
+      <div class="messages-area" id="messages-area">
+        <div class="message system">Chat boshlandi. Hamkor kutilmoqda...</div>
+      </div>
+
+      <div class="chat-input-area">
+        <textarea class="chat-input" id="chat-input" placeholder="Xabar yozing... (Enter — yuborish)" rows="1"></textarea>
+        <button class="btn-send" id="btn-send">➤</button>
+      </div>
+
+      <div class="chat-controls">
+        <button class="btn-sm btn-success" id="btn-next">⏭ Keyingisi</button>
+        <button class="btn-sm btn-danger" id="btn-leave">✕ Yakunlash</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="waiting-overlay" id="waiting-overlay" style="display:none">
+    <div class="waiting-spinner"></div>
+    <div class="waiting-text">Hamkor qidirilmoqda...</div>
+    <div class="waiting-sub">Online foydalanuvchilar soni oshganda tezroq topiladi</div>
+    <button class="btn btn-ghost" id="btn-cancel-wait" style="width:auto;padding:10px 24px;margin-top:8px" onclick="document.getElementById('waiting-overlay').style.display='none'; window.location.href='/dashboard'">Bekor qilish</button>
+  </div>
+</div>
+
+<script>
+  window.__USER_ID__ = {{ user.user_id }};
+  window.__USERNAME__ = "{{ user.username }}";
+</script>
+<script src="/static/js/chat.js"></script>
+</body>
+</html>

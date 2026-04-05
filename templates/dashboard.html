@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Chatruletka</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="noise"></div>
+<div class="grid-bg"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="page-wrapper dashboard-layout">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand-logo" style="margin:0">
+        <div class="brand-icon" style="width:32px;height:32px;border-radius:10px;font-size:16px">🎲</div>
+        <span class="brand-name" style="font-size:18px">Chatruletka</span>
+      </div>
+      <div class="online-badge">
+        <div class="online-dot"></div>
+        <span id="online-count">0</span> online
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="user-chip">
+        <div class="avatar">{{ user.username[0].upper() }}</div>
+        <span>{{ user.username }}</span>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="logout-btn" style="width:auto;padding:8px 14px;font-size:13px">Chiqish</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="start-section">
+      <div class="start-icon">🎲</div>
+      <h2>Tasodifiy Chat</h2>
+      <p>Butun dunyo bo'ylab tasodifiy foydalanuvchilar bilan real vaqt rejimida video va matn orqali muloqot qiling</p>
+      <a href="/chat" class="btn-start">
+        <span>▶</span> Chatni boshlash
+      </a>
+    </div>
+
+    <div class="history-section">
+      <div class="section-title">
+        <span>🕐</span> Suhbatlar tarixi
+      </div>
+      <div class="history-list" id="history-list">
+        <div class="empty-state">Yuklanmoqda...</div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>

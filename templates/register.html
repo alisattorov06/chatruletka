@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ro'yxatdan o'tish — Chatruletka</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="noise"></div>
+<div class="grid-bg"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="page-wrapper">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="brand-logo">
+        <div class="brand-icon">🎲</div>
+        <span class="brand-name">Chatruletka</span>
+      </div>
+      <h1 class="auth-title">Yangi hisob</h1>
+      <p class="auth-subtitle">Ro'yxatdan o'ting va tasodifiy chat boshlang</p>
+
+      <form id="register-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first_name">Ism</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Ism" required>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Familiya</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Familiya" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="username" autocomplete="username" required>
+          <div class="field-hint" id="username-hint"></div>
+        </div>
+        <div class="form-group">
+          <label for="password">Parol</label>
+          <input type="password" id="password" name="password" placeholder="Kamida 6 belgi" autocomplete="new-password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm_password">Parolni tasdiqlang</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Parolni qayta kiriting" autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:8px">Ro'yxatdan o'tish</button>
+      </form>
+
+      <div class="auth-link">
+        Hisobingiz bormi? <a href="/login">Kirish</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/js/auth.js"></script>
+</body>
+</html>

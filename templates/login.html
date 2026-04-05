@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirish — Chatruletka</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="noise"></div>
+<div class="grid-bg"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="page-wrapper">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="brand-logo">
+        <div class="brand-icon">🎲</div>
+        <span class="brand-name">Chatruletka</span>
+      </div>
+      <h1 class="auth-title">Xush kelibsiz!</h1>
+      <p class="auth-subtitle">Hisobingizga kiring</p>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="username" autocomplete="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Parol</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:8px">Kirish</button>
+      </form>
+
+      <div class="auth-link">
+        Hisobingiz yo'qmi? <a href="/register">Ro'yxatdan o'ting</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/js/auth.js"></script>
+</body>
+</html>
