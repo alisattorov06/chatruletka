@@ -241,7 +241,6 @@ btnLeave.addEventListener('click', async () => {
   await leaveRoom();
   showWaiting(false);
   isSearching = false;
-  window.location.href = '/dashboard';
 });
 
 btnSend.addEventListener('click', sendMessage);
