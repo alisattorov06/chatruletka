@@ -263,11 +263,14 @@ input.success { border-color: var(--accent3); }
 }
 
 .video-panel {
-  display: flex; flex-direction: column; gap: 0; position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
 }
 
 .video-wrapper {
-  flex: 1; position: relative; background: #000; overflow: hidden;
+  flex: 1; position: relative; background: #000;width: 100%;
+  height: 100%; overflow: hidden;
 }
 
 .video-wrapper.self { border-right: 1px solid var(--border); }
